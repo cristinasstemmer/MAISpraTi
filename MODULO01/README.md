@@ -2,3 +2,7 @@ Aqui encontram-se as atividades propostas, separadas por pasta, cada uma com sua
 
 cd .\Atividade-01\
 node .\temperatura.js
+
+Para instalar o módulo node.js no terminal, digitar o comando:
+
+npm install -g node
