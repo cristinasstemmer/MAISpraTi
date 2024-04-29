@@ -9,4 +9,4 @@ npm install -g node
 
 ------------
 
-Para acessar o enunciado da lista de exercícios, baixe o PDF entitulado "Lista de Tarefas 1"
+Para acessar o enunciado da lista de exercícios, acesse o arquivo PDF entitulado "Lista de Tarefas 1"
