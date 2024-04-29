@@ -1,4 +1,4 @@
-Aqui encontram-se as respostas das propostas, separadas por pasta, cada uma com suas instrução e descrição. Basta navegar para a pasta desejada e executá-la conforme o exemplo a seguir.
+Aqui encontram-se as respostas dos exercícios propostos, separadas por pasta, cada uma com suas instrução e descrição. Basta navegar para a pasta desejada e executá-la conforme o exemplo a seguir.
 
 cd .\Atividade-01\
 node .\temperatura.js
