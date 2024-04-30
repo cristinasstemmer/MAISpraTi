@@ -18,4 +18,4 @@ node .\temperatura.js
 
 ------------
 
-Para acessar o enunciado da lista de exercícios, acesse o arquivo PDF entitulado "Lista de Tarefas 1"
+*Para acessar o enunciado da lista de exercícios, acesse o arquivo PDF entitulado "Lista de Tarefas 1"*
