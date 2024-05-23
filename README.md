@@ -7,3 +7,14 @@ Uma iniciativa social, que nasceu em 2020, da inquietação de empresários do s
 Proporcionar, através do conhecimento, oportunidades de empregos vinculados à
 tecnologia. E com isso, causar um impacto positivo nas pessoas e empresas atreladas ao
 projeto.
+
+## Relação dos Módulos:
+
+Módulo 1 - Introdução à Lógica de Programação
+Módulo 2 - Introdução ao Controle de Versão com Git e Github
+Módulo 3 - Fundamentos do Desenvolvimento Front-end
+Módulo 4 - Desenvolvendo Front-end com ReactJS
+Módulo 5 - Introdução à Linguagem Java
+Módulo 6 - Fundamentos de Bancos de Dados Relacionais
+Módulo 7 - Desenvolvimento de API’s Rest com Spring Boot
+Módulo 8 - Laboratório de Projeto Final
