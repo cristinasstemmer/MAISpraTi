@@ -1,10 +1,11 @@
 const prompt = require('prompt-sync')();
 
-function lerMatriz(tamanho) {
+function lerMatriz() {
   const matriz = [];
-  for (let i = 0; i < tamanho; i++) {
+
+  for (let i = 0; i < 30; i++) {
     const linha = [];
-    for (let j = 0; j < tamanho; j++) {
+    for (let j = 0; j < 30; j++) {
       const valor = parseInt(prompt(`Informe o valor para a posição [${i}][${j}]: `), 10);
       linha.push(valor);
     }
@@ -35,7 +36,7 @@ function contarEFiltrarMatriz(matriz, A) {
 }
 
 const A = parseInt(prompt('Informe o número inteiro A: '), 10);
-const V = lerMatriz(30);
+const V = lerMatriz();
 const { contador, matrizX } = contarEFiltrarMatriz(V, A);
 
 console.log(`Quantidade de valores iguais a ${A}: ${contador}`);

@@ -9,7 +9,7 @@ function calcularPesoIdeal(altura, sexo) {
   }
   
   const prompt = require('prompt-sync')();
-  const altura = parseFloat(prompt('Informe a altura: '));
+  const altura = parseFloat(prompt('Informe a altura em metros: '));
   const sexo = prompt('Informe o sexo (M/F): ').toUpperCase();
   const pesoIdeal = calcularPesoIdeal(altura, sexo);
   console.log(`O peso ideal é: ${pesoIdeal.toFixed(2)} kg`);

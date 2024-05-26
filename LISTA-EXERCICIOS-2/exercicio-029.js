@@ -1,25 +1,51 @@
-function somasMatriz(matriz) {
-    const somaLinha4 = matriz[3].reduce((acc, val) => acc + val, 0);
-    const somaColuna2 = matriz.reduce((acc, linha) => acc + linha[1], 0);
-    const somaDiagonalPrincipal = matriz.reduce((acc, linha, i) => acc + linha[i], 0);
-    const somaTodosElementos = matriz.flat().reduce((acc, val) => acc + val, 0);
-  
-    return { somaLinha4, somaColuna2, somaDiagonalPrincipal, somaTodosElementos };
+const prompt = require('prompt-sync')();
+
+function lerMatriz(tamanho) {
+  const matriz = [];
+
+  for (let i = 0; i < tamanho; i++) {
+    const linha = [];
+    for (let j = 0; j < tamanho; j++) {
+      const valor = parseFloat(prompt(`Informe o valor para a posição [${i}][${j}]: `));
+      linha.push(valor);
+    }
+    matriz.push(linha);
   }
-  
-  const matriz = [
-    [1, 2, 3, 4, 5],
-    [6, 7, 8, 9, 10],
-    [11, 12, 13, 14, 15],
-    [16, 17, 18, 19, 20],
-    [21, 22, 23, 24, 25]
-  ];
-  
-  const { somaLinha4, somaColuna2, somaDiagonalPrincipal, somaTodosElementos } = somasMatriz(matriz);
-  console.log(`Soma da linha 4: ${somaLinha4}`);
-  console.log(`Soma da coluna 2: ${somaColuna2}`);
-  console.log(`Soma da diagonal principal: ${somaDiagonalPrincipal}`);
-  console.log(`Soma de todos os elementos: ${somaTodosElementos}`);
-  console.log('Matriz:');
-  matriz.forEach(linha => console.log(linha));
-  
+
+  return matriz;
+}
+
+function somasMatriz(matriz) {
+  let somaLinha4 = 0;
+  let somaColuna2 = 0;
+  let somaDiagonalPrincipal = 0;
+  let somaTodosElementos = 0;
+
+  for (let i = 0; i < matriz.length; i++) {
+    for (let j = 0; j < matriz[i].length; j++) {
+      if (i === 3) {
+        somaLinha4 += matriz[i][j];
+      }
+      if (j === 1) {
+        somaColuna2 += matriz[i][j];
+      }
+      if (i === j) {
+        somaDiagonalPrincipal += matriz[i][j];
+      }
+      somaTodosElementos += matriz[i][j];
+    }
+  }
+
+  return { somaLinha4, somaColuna2, somaDiagonalPrincipal, somaTodosElementos };
+}
+
+const tamanho = parseInt(prompt('Informe o tamanho da matriz (n x n): '), 10);
+const matriz = lerMatriz(tamanho);
+const { somaLinha4, somaColuna2, somaDiagonalPrincipal, somaTodosElementos } = somasMatriz(matriz);
+
+console.log(`Soma da linha 4: ${somaLinha4}`);
+console.log(`Soma da coluna 2: ${somaColuna2}`);
+console.log(`Soma da diagonal principal: ${somaDiagonalPrincipal}`);
+console.log(`Soma de todos os elementos: ${somaTodosElementos}`);
+console.log('Matriz:');
+matriz.forEach(linha => console.log(linha));

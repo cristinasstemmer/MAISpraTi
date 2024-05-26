@@ -19,8 +19,12 @@ for (let i = 0; i < 100; i++) {
 }
 
 apostadores.forEach(apostador => {
-  const acertos = apostador.respostas.reduce((total, resposta, index) => 
-    total + (resposta === gabarito[index] ? 1 : 0), 0);
+  let acertos = 0;
+  for (let i = 0; i < 13; i++) {
+    if (apostador.respostas[i] === gabarito[i]) {
+      acertos++;
+    }
+  }
   console.log(`Apostador ${apostador.numeroCartao}: ${acertos} acertos.`);
   if (acertos === 13) {
     console.log("Parabéns, tu foi o GANHADOR");

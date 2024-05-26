@@ -10,15 +10,25 @@ const operacao = parseInt(prompt("Informe a operação (1- soma, 2- produto, 3- 
 
 switch (operacao) {
   case 1:
-    const soma = vetor.reduce((total, valor) => total + valor, 0);
+    let soma = 0;
+    for (let i = 0; i < vetor.length; i++) {
+      soma += vetor[i];
+    }
     console.log(`Soma dos elementos: ${soma}`);
     break;
   case 2:
-    const produto = vetor.reduce((total, valor) => total * valor, 1);
+    let produto = 1;
+    for (let i = 0; i < vetor.length; i++) {
+      produto *= vetor[i];
+    }
     console.log(`Produto dos elementos: ${produto}`);
     break;
   case 3:
-    const media = vetor.reduce((total, valor) => total + valor, 0) / vetor.length;
+    let total = 0;
+    for (let i = 0; i < vetor.length; i++) {
+      total += vetor[i];
+    }
+    const media = total / vetor.length;
     console.log(`Média dos elementos: ${media}`);
     break;
   case 4:

@@ -1,21 +1,47 @@
-function somasLinhasColunas(matriz) {
-    const somaLinhas = matriz.map(linha => linha.reduce((acc, val) => acc + val, 0));
-    const somaColunas = matriz[0].map((_, colIndex) => matriz.reduce((acc, linha) => acc + linha[colIndex], 0));
-  
-    return { somaLinhas, somaColunas };
+const prompt = require('prompt-sync')();
+
+function lerMatriz() {
+  const matriz = [];
+
+  for (let i = 0; i < 5; i++) {
+    const linha = [];
+    for (let j = 0; j < 5; j++) {
+      const valor = parseFloat(prompt(`Informe o valor para a posição [${i}][${j}]: `));
+      linha.push(valor);
+    }
+    matriz.push(linha);
   }
-  
-  const matriz = [
-    [1, 2, 3, 4, 5],
-    [6, 7, 8, 9, 10],
-    [11, 12, 13, 14, 15],
-    [16, 17, 18, 19, 20],
-    [21, 22, 23, 24, 25]
-  ];
-  
-  const { somaLinhas, somaColunas } = somasLinhasColunas(matriz);
-  console.log('Matriz:');
-  matriz.forEach(linha => console.log(linha));
-  console.log('Somas das linhas:', somaLinhas);
-  console.log('Somas das colunas:', somaColunas);
-  
+
+  return matriz;
+}
+
+function somasLinhasColunas(matriz) {
+  const SL = [];
+  const SC = [];
+
+  for (let i = 0; i < matriz.length; i++) {
+    let somaLinha = 0;
+    for (let j = 0; j < matriz[i].length; j++) {
+      somaLinha += matriz[i][j];
+    }
+    SL.push(somaLinha);
+  }
+
+  for (let j = 0; j < matriz[0].length; j++) {
+    let somaColuna = 0;
+    for (let i = 0; i < matriz.length; i++) {
+      somaColuna += matriz[i][j];
+    }
+    SC.push(somaColuna);
+  }
+
+  return { SL, SC };
+}
+
+const matriz = lerMatriz();
+const { SL, SC } = somasLinhasColunas(matriz);
+
+console.log('Matriz:');
+matriz.forEach(linha => console.log(linha));
+console.log('Somas das linhas:', SL);
+console.log('Somas das colunas:', SC);

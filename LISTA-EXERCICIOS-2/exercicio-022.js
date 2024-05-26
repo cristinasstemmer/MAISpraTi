@@ -8,7 +8,7 @@ function coletarDados() {
   let pessoasSalarioAte350 = 0;
 
   while (true) {
-    const salario = parseFloat(prompt('Informe o salário (ou -1 para sair): '));
+    const salario = parseFloat(prompt('Informe o salário (ou digite -1 para sair): '));
     if (salario === -1) break;
 
     const numFilhos = parseInt(prompt('Informe o número de filhos: '), 10);
